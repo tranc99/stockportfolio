@@ -8,6 +8,8 @@ export class StockService {
     return Promise.resolve(this.stocks);
   }
 
+  
+
   constructor() {
     this.stocks = [
                     { symbol: "GOOG", price: 100 },

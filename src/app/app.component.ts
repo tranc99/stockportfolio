@@ -36,7 +36,15 @@ export class AppComponent {
   }
 
   getStockPrices() {
-    this.stockService.getStockPrices().then(prices => this.stockPrices = prices);
+    this.stockService.getStockPrices().then(prices => {
+      console.log('just got prices: ', prices);
+      this.stockPrices = prices;
+    });
+  }
+
+  ngOnInit() {
+    // check for updated prices
+    setInterval(() => {this.getStockPrices(); }, 1000);
   }
 
 }
