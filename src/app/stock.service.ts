@@ -2,63 +2,63 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class StockService {
-  stocks: any;
+  static stocks: any;
 
   getStockPrices = () => {
     //setInterval(() => {this.computePrices(); }, 1000);
-    this.computePrices();
-    return Promise.resolve(this.stocks);
+    StockService.computePrices(StockService.stocks);
+    return Promise.resolve(StockService.stocks);
   }
 
-  incrementPrice = (stock, index) => {
+  static incrementPrice = (stock, index) => {
     var price = stock.price;
     price += 5;
     if (price > 120) {
       price = 120;
     }
-    this.stocks[index].compute = this.uptrend;
-    this.stocks[index].price = price;
+    StockService.stocks[index].compute = StockService.uptrend;
+    StockService.stocks[index].price = price;
   }
 
-  decreasePrice = (stock, index) => {
+  static decreasePrice = (stock, index) => {
     var price = stock.price;
     price -= 5;
     if (price < 0) {
       price = 0;
     }
-    this.stocks[index].compute = this.downtrend;
-    this.stocks[index].price = price;
+    StockService.stocks[index].compute = StockService.downtrend;
+    StockService.stocks[index].price = price;
   }
 
-  computePrices = () => {
+  static computePrices = (input) => {
     console.log('computing new prices');
-    this.stocks.forEach(function(stock, index) {
+    input.forEach(function(stock, index) {
       if (stock.price >= 120) {
-        this.decreasePrice(stock, index);
+        StockService.decreasePrice(stock, index);
       }
       if (stock.price <= 0) {
-        this.incrementPrice(stock, index)
+        StockService.incrementPrice(stock, index)
       }
-      
-      this.stocks[index].price = stock.compute.call(stock);
+
+      input[index].price = stock.compute.call(null, stock);
     });
-
+    return input;
   }
 
-  uptrend = function() {
-    return this.price + 5;
+  static uptrend = (stock) => {
+    return stock.price + 5;
   }
 
-  downtrend = function() {
-    return this.price - 5;
+  static downtrend = function(stock) {
+    return stock.price - 5;
   }
 
   constructor() {
-    this.stocks = [
-                    { symbol: "GOOG", price: 150, compute: this.uptrend },
-                    { symbol: "YHOO", price: 50, compute: this.uptrend },
+    StockService.stocks = [
+                    { symbol: "GOOG", price: 150, compute: StockService.uptrend },
+                    { symbol: "YHOO", price: 50, compute: StockService.uptrend },
                   ];
-    console.log("Stocks from the stock service ", this.stocks.toString());
+    console.log("Stocks from the stock service ", StockService.stocks.toString());
 
   }
 
