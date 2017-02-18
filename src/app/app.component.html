@@ -11,24 +11,11 @@
 </ul>
 
 <hr>
-<h2>Stocks</h2>
-<ul>
-  <li>No stocks yet!</li><button type="button" class="btn btn-lg btn-info" (click)="getStockPrices()">Get Stocks</button>
-  <li *ngFor="let stock of stockPrices">
-    {{stock.symbol}}: USD {{stock.price}}
-  </li>
-</ul>
-
+<h2>Welcome, here are the latest updates on your stock picks.</h2>
 <br>
-<hr>
-
-
 
 <div class="row-fluid">
   <div class="widget-box">
-          <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
-            <h5>Data table</h5>
-          </div>
           <div class="widget-content nopadding">
             <table class="table table-bordered data-table">
               <thead>
@@ -47,7 +34,7 @@
                   <td>USD {{stock.price}}</td>
                   <td>{{stock.bought_price}}</td>
                   <td class="center">{{stock.quantity}}</td>
-                  <td>{{stock.total_value}}</td>
+                  <td>{{stock.price * stock.quantity}}</td>
                   <td>{{stock.trend}}</td>
                 </tr>
               </tbody>
