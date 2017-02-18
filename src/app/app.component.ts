@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, trigger, state } from '@angular/core';
 
 @Component({
   selector: 'app-root',
