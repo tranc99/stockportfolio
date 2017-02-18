@@ -13,7 +13,7 @@ import { Component, trigger, state, style, animate, transition } from '@angular/
         'background-color': 'green',
         'left': '90%'
       })),
-      transition('* => *', animate('5s 1s ease-in'))
+      transition('* => *', animate('5s 0s ease-in'))
     ])
   ]
 })
