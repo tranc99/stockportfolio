@@ -10,7 +10,8 @@ import { Component, trigger, state, style } from '@angular/core';
 
       })),
       state('roaming', style({
-        'background-color':'green'
+        'background-color': 'green',
+        'left': '400px'
       }))
     ])
   ]
