@@ -28,4 +28,17 @@ export class AppComponent {
     console.log('on the move');
     this.moving = 'roaming';
   }
+
+  stockPrices = [];
+  stockService: StockService;
+  constructor(stockService: StockService) {
+
+  }
+
+  getStockPrices() {
+    this.stockService.getStockPrices().then(prices => this.stockPrices = prices);
+  }
+
+  
+
 }

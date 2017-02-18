@@ -5,11 +5,14 @@ export class StockService {
   stocks: any;
 
   getStockPrices() {
-    return [500, 200];
+    return Promise.resolve(this.stocks);
   }
 
   constructor() {
-    this.stocks = ['GOOG', 'YHOO'];
+    this.stocks = [
+                    { stock: "GOOG", price: 100 },
+                    { stock: "YHOO", price: 50 },
+                  ];
     console.log("Stocks from the stock service ", this.stocks.toString());
   }
 
