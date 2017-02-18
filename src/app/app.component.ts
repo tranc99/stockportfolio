@@ -5,7 +5,14 @@ import { Component, trigger, state } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   animations: [
-    
+    trigger('movable', [
+      state('fixed', style({
+
+      })),
+      state('roaming', style({
+        
+      }))
+    ])
   ]
 })
 export class AppComponent {
