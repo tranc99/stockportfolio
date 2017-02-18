@@ -7,3 +7,11 @@
   I like to move it, move it.
 </div>
 <button type="button" class="btn btn-success" (click)="moveIt()">Move It!</button>
+<hr>
+<h2>Stocks</h2>
+<ul>
+  <li>No stocks yet!</li><button type="button" class="btn btn-lg btn-info" (click)="getStockPrices()">Get Stocks</button>
+  <li *ngFor="let stock of stockPrices">
+    {{stock.symbol}}: USD {{stock.price}}
+  </li>
+</ul>

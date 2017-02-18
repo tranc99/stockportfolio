@@ -32,13 +32,11 @@ export class AppComponent {
   stockPrices = [];
   stockService: StockService;
   constructor(stockService: StockService) {
-
+    this.stockService = stockService;
   }
 
   getStockPrices() {
     this.stockService.getStockPrices().then(prices => this.stockPrices = prices);
   }
-
-  
 
 }

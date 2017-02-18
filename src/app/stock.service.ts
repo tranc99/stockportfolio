@@ -10,8 +10,8 @@ export class StockService {
 
   constructor() {
     this.stocks = [
-                    { stock: "GOOG", price: 100 },
-                    { stock: "YHOO", price: 50 },
+                    { symbol: "GOOG", price: 100 },
+                    { symbol: "YHOO", price: 50 },
                   ];
     console.log("Stocks from the stock service ", this.stocks.toString());
   }
