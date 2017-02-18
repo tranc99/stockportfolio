@@ -11,7 +11,7 @@ import { Component, trigger, state, style, animate, transition } from '@angular/
       })),
       state('roaming', style({
         'background-color': 'green',
-        'left': '400px'
+        'left': '90%'
       })),
       transition('* => *', animate('5s 1s ease-in'))
     ])
