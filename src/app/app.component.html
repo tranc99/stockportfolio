@@ -42,29 +42,13 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="gradeX">
-                  <td>MSFT</td>
-                  <td>USD 200</td>
-                  <td>95</td>
-                  <td class="center">400</td>
-                  <td>23000</td>
-                  <td>UP</td>
-                </tr>
-                <tr class="gradeX">
-                  <td>MSFT</td>
-                  <td>USD 200</td>
-                  <td>95</td>
-                  <td class="center">400</td>
-                  <td>23000</td>
-                  <td>UP</td>
-                </tr>
-                <tr class="gradeX">
-                  <td>MSFT</td>
-                  <td>USD 200</td>
-                  <td>95</td>
-                  <td class="center">400</td>
-                  <td>23000</td>
-                  <td>UP</td>
+                <tr class="gradeX" *ngFor="let stock of stockPrices" [@trending]="stock.trend">
+                  <td>{{stock.symbol}}</td>
+                  <td>USD {{stock.price}}</td>
+                  <td>{{stock.bought_price}}</td>
+                  <td class="center">{{stock.quantity}}</td>
+                  <td>{{stock.total_value}}</td>
+                  <td>{{stock.trend}}</td>
                 </tr>
               </tbody>
             </table>

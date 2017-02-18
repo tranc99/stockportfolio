@@ -17,6 +17,7 @@ export class StockService {
       price = 120;
     }
     StockService.stocks[index].compute = StockService.uptrend;
+    StockService.stocks[index].trend = 'UP';
     StockService.stocks[index].price = price;
   }
 
@@ -27,6 +28,7 @@ export class StockService {
       price = 0;
     }
     StockService.stocks[index].compute = StockService.downtrend;
+    StockService.stocks[index].trend = 'DOWN';
     StockService.stocks[index].price = price;
   }
 
@@ -55,8 +57,10 @@ export class StockService {
 
   constructor() {
     StockService.stocks = [
-                    { symbol: "GOOG", price: 150, compute: StockService.uptrend },
-                    { symbol: "YHOO", price: 50, compute: StockService.uptrend },
+                    { symbol: "GOOG", price: 120, compute: StockService.uptrend, bought_price: 50, quantity: 0, total_value: 21000, trend: 'UP' },
+                    { symbol: "YHOO", price: 100, compute: StockService.uptrend, bought_price: 100, quantity: 0, total_value: 21000, trend: 'UP' },
+                    { symbol: "MSFT", price: 20, compute: StockService.uptrend, bought_price: 120, quantity: 0, total_value: 21000, trend: 'UP' },
+                    { symbol: "AAPL", price: 200, compute: StockService.uptrend, bought_price: 85, quantity: 0, total_value: 21000, trend: 'UP' },
                   ];
     console.log("Stocks from the stock service ", StockService.stocks.toString());
 
