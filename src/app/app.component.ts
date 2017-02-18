@@ -1,4 +1,4 @@
-import { Component, trigger, state } from '@angular/core';
+import { Component, trigger, state, style } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,15 +10,16 @@ import { Component, trigger, state } from '@angular/core';
 
       })),
       state('roaming', style({
-
+        'background-color':'green'
       }))
     ])
   ]
 })
 export class AppComponent {
   title = 'app works!';
-  movable: string = 'fixed';
+  moving: string;
   moveIt() {
-    console.log('moving');
+    console.log('on the move');
+    this.moving = 'roaming';
   }
 }

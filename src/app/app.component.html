@@ -1,8 +1,8 @@
 <h1>
   {{title}}
 </h1>
-[@movable]="moving"
-<div class="movable">
+
+<div class="movable" [@movable]="moving">
   I like to move it, move it.
 </div>
 <button type="button" class="btn btn-success" (click)="moveIt()">Move It!</button>
