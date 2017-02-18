@@ -16,7 +16,7 @@ import { Component, trigger, state, style } from '@angular/core';
   ]
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'Stock Dashboard';
   moving: string;
   moveIt() {
     console.log('on the move');
