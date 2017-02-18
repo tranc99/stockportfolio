@@ -1,4 +1,4 @@
-import { Component, trigger, state, style } from '@angular/core';
+import { Component, trigger, state, style, animate, transition } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,8 @@ import { Component, trigger, state, style } from '@angular/core';
       state('roaming', style({
         'background-color': 'green',
         'left': '400px'
-      }))
+      })),
+      transition('* => *', animate('5s 1s ease-in'))
     ])
   ]
 })
