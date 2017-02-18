@@ -1,6 +1,8 @@
 // src/app/app.component.ts
 import { Component, trigger, state, style, animate, transition } from '@angular/core';
 
+import { StockService } from './stock.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,7 +18,8 @@ import { Component, trigger, state, style, animate, transition } from '@angular/
       })),
       transition('* => *', animate('5s 0s ease-in'))
     ])
-  ]
+  ],
+  providers: [StockService]
 })
 export class AppComponent {
   title = 'Stock Dashboard';
