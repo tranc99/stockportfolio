@@ -7,28 +7,11 @@ import { StockService } from './stock.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  animations: [
-    trigger('movable', [
-      state('fixed', style({
-
-      })),
-      state('roaming', style({
-        'background-color': 'green',
-        'left': '90%'
-      })),
-      transition('* => *', animate('5s 0s ease-in'))
-    ])
-  ],
+  animations: [],
   providers: [StockService]
 })
 export class AppComponent {
   title = 'Stock Dashboard';
-  moving: string;
-  moveIt() {
-    console.log('on the move');
-    this.moving = 'roaming';
-  }
-
   stockPrices = [];
   stockService: StockService;
   constructor(stockService: StockService) {
