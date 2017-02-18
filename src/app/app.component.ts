@@ -10,13 +10,14 @@ import { Component, trigger, state } from '@angular/core';
 
       })),
       state('roaming', style({
-        
+
       }))
     ])
   ]
 })
 export class AppComponent {
   title = 'app works!';
+  movable: string = 'fixed';
   moveIt() {
     console.log('moving');
   }
